@@ -380,6 +380,88 @@ alamat: http://localhost:8080/contact
     dari 2000 tahun.', 'artikel-kedua');
     ``` 
 
+![img](img/ss36.png)
+<br>
+
+- Refresh kembali browser.
+![img](img/ss37.png)
+<br>
+
+## 6. Membuat Tampilan detail Artikel
+- Terletak di folder `app/Controllers`, edit file `Artikel.php`. Tambah method ``view()``.
+![img](img/ss38.png)
+<br>
+
+## 7. Membuat View pada Detail
+- Terletak di folder `app/Views/artikel`, buat file `detail.php`.
+![img](img/ss39.png)
+<br>
+
+## 8. Membuat Routing untuk artikel detail
+- Terletak di folder `app/Config`, edit file `Routes.php`.
+![img](img/ss40.png)
+<br>
+
+- Klik `Artikel Kedua` pada http://localhost:8080/artikel, untuk pindah ke detailnya.
+![img](img/ss41.png)
+<br>
+
+## 9. Membuat Menu admin
+- Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `admin_index()`.
+![img](img/ss42.png)
+<br>
+
+- Selanjutnya, akses kembali folder `app/Views/artikel`, buat file `admin_index.php`.
+    ```php
+    <?= $this->include('template/admin_header'); ?>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="table-primary">
+                <th scope="col">ID</th>
+                <th scope="col">Judul</th>
+                <th scope="col">Status</th>
+                <th scope="col">Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if($artikel): foreach($artikel as $row): ?>
+            <tr>
+                <td><?= $row['id']; ?></td>
+                <td>
+                    <b><?= $row['judul']; ?></b>
+                    <p><small><?= substr($row['isi'], 0, 50); ?></small></p>
+                </td>
+                <td><?= $row['status']; ?></td>
+                <td>
+                    <a class="btn btn-primary p-1" href="<?= base_url('/admin/artikel/edit/' . 
+                    $row['id']);?>">Ubah</a>
+                    <a class="btn btn-danger p-1" onclick="return confirm('Yakin menghapus data?');" href="<?= base_url('/admin/artikel/delete/' . 
+                    $row['id']);?>">Hapus</a>
+                </td>
+            </tr>
+            <?php endforeach; else: ?>
+            <tr>
+                <td colspan="4">Belum ada data.</td>
+            </tr>
+            <?php endif; ?>
+        </tbody>
+        <tfoot>
+            <tr class="table-primary">
+                <th scope="col">ID</th>
+                <th scope="col">Judul</th>
+                <th scope="col">Status</th>
+                <th scope="col">Aksi</th>
+            </tr>
+        </tfoot>
+    </table>
+    <?= $this->include('template/admin_footer'); ?>
+    ```
+<br>
+
+- Buka folder yang ada di ``app/Views/artikel/template``, kemudian buat:
+- ``admin_header.php``,
+
+
 
 
 
