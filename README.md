@@ -322,5 +322,66 @@ alamat: http://localhost:8080/contact
 
 ![img](img/ss29.png)
 
+# <span style="color: blue">Praktikum 12 | Framework Lanjutan (CRUD)</span>
+
+## 1. Database
+- Jalankan ``Apache, MySql`` pada Xampp, Buat database dengan nama ``lab_ci4`` di http://localhost/phpmyadmin.
+- Buat tabel dengan nama ``artikel``.
+    ```sql
+    CREATE TABLE artikel (
+        id INT(11) auto_increment,
+        judul VARCHAR(200) NOT NULL,
+        isi TEXT,
+        gambar VARCHAR(200),
+        status TINYINT(1) DEFAULT 0,
+        slug VARCHAR(200),
+        PRIMARY KEY(id)
+    );
+    ```
+
+![img](img/ss30.png)
+<br>
+
+## 2. Konfigurasi Koneksi Database
+- Terletak di folder ``ci4``, file `.env`, Hapus tanda `#`.
+![img](img/ss31.png)
+<br>
+
+## 3. Membuat Model 
+- Terletak di folder `app/Models`, buat file `ArtikelModel.php`.
+![img](img/ss32.png)
+<br>
+
+## 4. Membuat Controller 
+- Terletak di folder `app/Controllers`, buat file `Artikel.php`.
+![img](img/ss33.png)
+<br>
+
+## 5. Membuat View pada artikel 
+- Terletak di folder `app/Views/artikel`, buat file `index.php`.
+![img](img/ss34.png)
+<br>
+
+- Buka browser, ketik http://localhost:8080/artikel 
+![img](img/ss35.png)
+<br>
+
+- Masukkan data ke tabel artikel,
+    ```sql
+    INSERT INTO artikel (judul, isi, slug) VALUE
+    ('Artikel pertama', 'Lorem Ipsum adalah contoh teks atau dummy dalam industri 
+    percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah menjadi 
+    standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak 
+    dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah 
+    buku contoh huruf.', 'artikel-pertama'), 
+    ('Artikel kedua', 'Tidak seperti anggapan banyak orang, Lorem Ipsum bukanlah 
+    teks-teks yang diacak. Ia berakar dari sebuah naskah sastra latin klasik dari 
+    era 45 sebelum masehi, hingga bisa dipastikan usianya telah mencapai lebih 
+    dari 2000 tahun.', 'artikel-kedua');
+    ``` 
+
+
+
+
 cukup sekian dan terimakasih.
 
