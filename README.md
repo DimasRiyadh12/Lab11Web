@@ -94,7 +94,7 @@ perintah berikut.
 php spark routes
 ```
 
-![img](Img/ss13.png)
+![img](img/ss13.png)
 
 Selanjutnya coba akses route yang telah dibuat dengan mengakses alamat url http://localhost:8080/about
 
