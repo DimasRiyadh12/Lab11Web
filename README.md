@@ -460,6 +460,68 @@ alamat: http://localhost:8080/contact
 
 - Buka folder yang ada di ``app/Views/artikel/template``, kemudian buat:
 - ``admin_header.php``,
+![img](img/ss43.png)
+<br>
+
+- ``admin_footer.php``
+![img](img/ss44.png)
+<br>
+
+## 10. Membuat Routing untuk menu admin
+- Terletak di folder `app/Config`, edit file `Routes.php`.
+![img](img/ss45.png)
+
+<br>
+
+- Akses browser dengan http://localhost:8080/admin/artikel.
+![img](img/ss46.png)
+<br>
+
+## 11. Menambah data untuk Artikel
+- Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `add()`.
+![img](img/ss47.png)
+<br>
+
+- Akses kembali folder `app/Views/artikel`, buat file `form_add.php`.
+![img](img/ss48.png)
+<br>
+
+- Akses browser dengan http://localhost:8080/admin/artikel/add.
+![img](img/ss49.png)
+<br>
+
+## 12. Mengubah data pada Artikel
+- Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `edit()`.
+![img](img/ss50.png)
+<br>
+
+- Akses kembali folder `app/Views/artikel`, buat file `form_edit.php`.
+![img](img/ss51.png)
+<br>
+
+- Akses browser dengan http://localhost:8080/admin/artikel/edit/1 untuk Mengubah artikel pertama.
+![img](img/ss52.png)
+<br>
+
+## 13. Menghapus data pada Artikel
+- Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `delete()`.
+![img](img/ss53.png)
+<br>
+
+- Akses browser dengan http://localhost:8080/admin/artikel/add untuk membuat artikel ketiga, lalu `kirim`.
+![img](img/ss54.png)
+<br>
+
+- Untuk mengeceknya ketik di url, http://localhost:8080/artikel kemudian enter.
+![img](img/ss55.png)
+<br>
+
+- Pergi ke menu admin untuk menghapusnya, http://localhost:8080/admin/artikel, kemudian pilih `hapus`.
+![img](img/ss56.png)
+<br>
+
+- Artikel berhasil dihapus.
+![img](img/ss57.png)
 
 
 
